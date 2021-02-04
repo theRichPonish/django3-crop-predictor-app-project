@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='container text-center'>
+	<h1>The Crop Predictor</h1>
+	<h3>This is a webapp made by Ponish Bhatia to help farmers. It can predict your crop with some inputs.</h3>
+<!-- 	<iframe width="560" height="315" src="https://www.youtube.com/embed/LBIvBgmP-8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+	<a href="{% url 'predictcrop' %}"><button class='btn btn-primary'>Start</button></a>
+</div>
+{% endblock %}

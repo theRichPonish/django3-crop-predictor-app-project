@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-center">
+	<h1>Prediction Time!</h1>
+	<br>
+	<h5>Please input a number in the following fields for content in soil.</h5>
+	{% if error_value_name_type %}
+	<div class="alert alert-danger">
+  {{ error_value_name_type }}
+</div>
+{% endif %}
+<form method='POST'>
+	<div class="form-floating mb-3">
+	{% csrf_token %}
+	{{ form.as_p }}
+<!--<input type="file" id="myFile" name="csv" d> -->
+	<button type="submit" class='btn btn-primary'>Submit</button>
+</div>
+</form>
+<br>
+<br>
+{% if crop %}
+<div class="alert alert-success">
+  You should grow {{ crop }}
+</div>
+
+{% endif %}
+</div>
+{% endblock %}
